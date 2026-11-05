@@ -20,6 +20,7 @@ Drawing::Drawing(AbstractSheet *sheet, CreateFlag flag)
 Drawing::~Drawing()
 {
     qDeleteAll(anchors);
+    anchors.clear();
 }
 
 void Drawing::saveToXmlFile(QIODevice *device) const

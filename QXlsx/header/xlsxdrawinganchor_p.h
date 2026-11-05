@@ -112,6 +112,12 @@ protected:
     QString x_tailEnd_w, x_tailEnd_len, x_tailEnd_tyep;
     QString Style_inref_idx, style_fillref_idx, style_effectref_idx, style_forntref_idx;
     QString Style_inref_val, style_fillref_val, style_effectref_val, style_forntref_val;
+
+    // Specific to Shape (xdr:sp): Raw XML subtree of txBody (including bodyPr/lstStyle/p, etc.).
+    // Saved as a whole block and written back as-is during save, to avoid content loss from field-by-field parsing.
+    QString sp_txBodyXml;
+    // Specific to Shape/cxnSp: whether cNvSpPr has txBox="1" (text box indicator).
+    QString sp_txBox;
     // liufeij }}
 };
 
