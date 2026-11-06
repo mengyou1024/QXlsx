@@ -158,6 +158,10 @@ target_compile_definitions(QXlsx PRIVATE
     QT_DISABLE_DEPRECATED_BEFORE=0x060600
 )
 
+target_compile_options(QXlsx PUBLIC
+    $<$<C_COMPILER_ID:MSVC>:/utf-8>
+    $<$<CXX_COMPILER_ID:MSVC>:/utf-8>
+)
 
 if(MSVC)
     # SHELL: forces CMake to place /permissive at the very end of the argument list,
